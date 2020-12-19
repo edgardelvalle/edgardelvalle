@@ -18,7 +18,3 @@ module.exports = {
     },
   ],
 };
-
-module.exports = {
-  pathPrefix: '/edgardelvalle',
-};
