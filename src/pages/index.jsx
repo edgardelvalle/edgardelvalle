@@ -63,9 +63,9 @@ const Container = styled.div`
   }
 
   .projects {
+    width: 100%;
     color: #484848;
     text-align: center;
-    position: absolute;
     bottom: 0;
   }
 `;

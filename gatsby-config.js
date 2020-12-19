@@ -1,20 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: "My personal website",
+    title: 'My personal website',
   },
   plugins: [
-    "gatsby-plugin-styled-components",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-offline",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-styled-components',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
   ],
+};
+
+module.exports = {
+  pathPrefix: '/edgardelvalle',
 };
