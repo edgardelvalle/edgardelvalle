@@ -4,6 +4,8 @@ import { animated, useTrail } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { Link } from 'gatsby';
+import Navbar from '../components/Navbar';
 
 const Container = styled.div`
   font-family: 'Roboto', sans-serif;
@@ -61,18 +63,12 @@ const Container = styled.div`
       }
     }
   }
-
-  .projects {
-    width: 100%;
-    color: #484848;
-    text-align: center;
-    bottom: 0;
-  }
 `;
 
 const IndexPage = () => {
   return (
     <Container>
+      <Navbar />
       <div className="hero">
         <h1 className="full-name">
           Edgar <span className="last-name">Del Valle</span>
@@ -97,9 +93,6 @@ const IndexPage = () => {
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faEnvelope} />
           </a>
         </div>
-        <a href="#projects">
-          <h2 className="projects">Check out my projects! 👇</h2>
-        </a>
       </div>
     </Container>
   );
