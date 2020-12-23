@@ -1,16 +1,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { animated, useTrail } from 'react-spring';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
-import { Link } from 'gatsby';
+import { faEnvelope, faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import Navbar from '../components/Navbar';
+import Projects from './Projects';
+import './GlobalStyles.css';
+import AboutMe from './AboutMe';
 
 const Container = styled.div`
-  font-family: 'Roboto', sans-serif;
-
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 
   display: flex;
@@ -22,26 +21,25 @@ const Container = styled.div`
   .hero {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
-  .full-name {
+  .first-name {
+    font-size: 10rem;
     color: #2f2f2f;
     text-transform: uppercase;
-    font-size: 9vw;
     margin: 0;
     text-align: center;
   }
 
   .last-name {
+    font-size: 7rem;
     font-weight: 300;
     display: block;
-    font-size: 6.4vw;
   }
 
   .description {
     text-transform: uppercase;
-    font-size: 1vw;
+    font-size: 1rem;
     font-weight: 200;
     letter-spacing: 0.5vw;
     text-align: center;
@@ -63,38 +61,69 @@ const Container = styled.div`
       }
     }
   }
+
+  .resume {
+    text-transform: uppercase;
+    text-decoration: none;
+    align-self: center;
+    color: white;
+    border-radius: 10px;
+
+    background-color: #2f2f2f;
+    padding: 10px 13px;
+    transition: all ease-in-out 100ms;
+
+    :hover {
+      background-color: #505050;
+      transform: translateY(-5px);
+      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
+    }
+  }
 `;
 
 const IndexPage = () => {
   return (
-    <Container>
+    <>
       <Navbar />
-      <div className="hero">
-        <h1 className="full-name">
-          Edgar <span className="last-name">Del Valle</span>
-        </h1>
-        <span className="description">Web Developer</span>
-        <div className="contact">
+      <Container>
+        <div className="hero">
+          <h1 className="first-name">
+            Edgar <span className="last-name">Del Valle</span>
+          </h1>
+
+          <span className="description">Web Developer</span>
+          <div className="contact">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://github.com/edgardelvalle"
+            >
+              <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faGithub} />
+            </a>
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/in/edgardelvalleb/"
+            >
+              <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faLinkedinIn} />
+            </a>
+            <a rel="noreferrer" href="mailto:edqardv@gmail.com">
+              <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faEnvelope} />
+            </a>
+          </div>
           <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://github.com/edgardelvalle"
+            className="resume"
+            href="src/files/EdgarDelValleResume.pdf"
+            download
           >
-            <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faGithub} />
-          </a>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href="https://www.linkedin.com/in/edgardelvalleb/"
-          >
-            <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faLinkedinIn} />
-          </a>
-          <a rel="noreferrer" href="mailto:edqardv@gmail.com">
-            <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faEnvelope} />
+            Resume <FontAwesomeIcon color="white" size="1x" icon={faFilePdf} />
           </a>
         </div>
-      </div>
-    </Container>
+      </Container>
+      <Projects />
+      <AboutMe />
+    </>
   );
 };
 

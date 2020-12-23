@@ -4,10 +4,7 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   font-weight: 300;
-  position: fixed;
-  background-color: white;
-  top: 0;
-  width: 50%;
+  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
@@ -44,13 +41,10 @@ const Navbar = () => {
     <Container>
       <ul className="link-list">
         <li className="link-item">
-          <Link to="/">Contact</Link>
+          <Link to="#projects">Projects</Link>
         </li>
         <li className="link-item">
-          <Link to="/Projects">Projects</Link>
-        </li>
-        <li className="link-item">
-          <Link to="/about-me">About Me</Link>
+          <Link to="#about-me">About Me</Link>
         </li>
       </ul>
     </Container>
