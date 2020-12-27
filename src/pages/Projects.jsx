@@ -18,6 +18,10 @@ const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10%;
+
+    @media (max-width: 768px) {
+      width: 100vw;
+    }
   }
 
   .projects-header {
@@ -34,6 +38,20 @@ const Container = styled.div`
       0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
       0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
       0 100px 80px rgba(0, 0, 0, 0.12);
+
+    @media (max-width: 768px) {
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: none;
+      left: 0;
+    }
+  }
+
+  .project-details {
+    @media (max-width: 768px) {
+      padding: 5%;
+    }
   }
 
   .project-tools {

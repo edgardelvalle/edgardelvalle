@@ -29,12 +29,20 @@ const Container = styled.div`
     text-transform: uppercase;
     margin: 0;
     text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 6rem;
+    }
   }
 
   .last-name {
     font-size: 7rem;
     font-weight: 300;
     display: block;
+
+    @media (max-width: 768px) {
+      font-size: 4.3rem;
+    }
   }
 
   .description {
