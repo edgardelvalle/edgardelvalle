@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import Projects from './Projects';
 import './GlobalStyles.css';
 import AboutMe from './AboutMe';
+import resume from '../files/Edgar Del Valle_Resume.pdf';
 
 const Container = styled.div`
   width: 100%;
@@ -120,11 +121,7 @@ const IndexPage = () => {
               <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faEnvelope} />
             </a>
           </div>
-          <a
-            className="resume"
-            href="src/files/EdgarDelValleResume.pdf"
-            download
-          >
+          <a className="resume" href={resume} download>
             Resume <FontAwesomeIcon color="white" size="1x" icon={faFilePdf} />
           </a>
         </div>
