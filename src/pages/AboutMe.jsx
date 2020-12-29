@@ -28,6 +28,10 @@ const Container = styled.div`
   .skill-item {
     margin: 10px;
   }
+
+  .summary {
+    padding: 2.5%;
+  }
 `;
 
 const AboutMe = () => {

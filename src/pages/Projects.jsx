@@ -4,6 +4,7 @@ import MovieLibrary from '../images/MovieLibrary.png';
 import projectdata from '../data/projectdata';
 
 const Container = styled.div`
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   height: 100%;
@@ -26,10 +27,12 @@ const Container = styled.div`
 
   .projects-header {
     font-size: 3rem;
+    margin-left: 2%;
   }
 
   .project-screenshot {
     width: 60%;
+    height: 100%;
     flex-grow: 4;
     border-radius: 20px;
     margin: 1rem;
