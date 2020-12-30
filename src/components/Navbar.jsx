@@ -2,23 +2,26 @@ import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.div`
-  font-weight: 300;
+const Container = styled.aside`
+  position: fixed;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.95);
   height: 50px;
+
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
+  width: 100vw;
 
   .link-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
     display: flex;
-    justify-content: center;
   }
 
   .link-item {
-    text-transform: uppercase;
+    text-transform: capitalize;
 
     a {
       color: inherit;
@@ -39,6 +42,9 @@ const Navbar = () => {
   return (
     <Container>
       <ul className="link-list">
+        <li className="link-item">
+          <Link to="#contact">Contact</Link>
+        </li>
         <li className="link-item">
           <Link to="#projects">Projects</Link>
         </li>

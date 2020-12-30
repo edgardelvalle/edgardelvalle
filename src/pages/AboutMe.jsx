@@ -1,12 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
+import Memoji from '../files/Memoji.png';
 
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   display: flex;
+  justify-content: center;
+  color: #242424;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  .header {
+    font-size: 3rem;
+  }
+
+  .hero {
+    width: 80vw;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 3%;
+  }
+
+  .memoji {
+    height: 200px;
+  }
+
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
   .greeting {
     font-size: 1.5rem;
@@ -16,47 +38,47 @@ const Container = styled.div`
     font-weight: 700;
   }
 
+  .summary-statement {
+    line-height: 2rem;
+  }
+
   .skill-list {
     margin: 0;
     padding: 0;
     list-style-type: none;
-
     display: flex;
-    justify-content: center;
   }
 
   .skill-item {
     margin: 10px;
-  }
-
-  .summary {
-    padding: 2.5%;
   }
 `;
 
 const AboutMe = () => {
   return (
     <Container id="about-me">
-      <p className="greeting">
-        Hello, my name is <span className="name">Edgar Del Valle</span>.
-      </p>
-      <div className="summary">
-        <p className="summary-statement">
-          I am a student at{' '}
-          <span className="summary-school"> California State University </span>{' '}
-          San Marcos with a major in
-          <span className="summary-major">
-            {' '}
-            Computer Science: Computer Information Systems
-          </span>
-        </p>
-        <p className="skill-statement">My skills include:</p>
-        <ul className="skill-list">
-          <li className="skill-item">HTML</li>
-          <li className="skill-item">CSS</li>
-          <li className="skill-item">JavaScript</li>
-          <li className="skill-item">ReactJS</li>
-        </ul>
+      <h1 className="header">About me...</h1>
+      <div className="hero">
+        <div className="info">
+          <img className="memoji" src={Memoji} alt="Edgar's memoji" />
+          <div className="summary">
+            <p className="greeting">
+              Hello, I'm <span className="name">Edgar Del Valle</span>.
+            </p>
+            <p className="summary-statement">
+              I am a student at California State University San Marcos majoring
+              in Computer Science: Computer Information Systems. I am currently
+              searching for my first web developer role.
+            </p>
+            <p className="skill-statement">My skills include:</p>
+            <ul className="skill-list">
+              <li className="skill-item">HTML</li>
+              <li className="skill-item">CSS</li>
+              <li className="skill-item">JavaScript</li>
+              <li className="skill-item">ReactJS</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </Container>
   );

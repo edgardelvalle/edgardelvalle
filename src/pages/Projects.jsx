@@ -4,11 +4,16 @@ import MovieLibrary from '../images/MovieLibrary.png';
 import projectdata from '../data/projectdata';
 
 const Container = styled.div`
-  overflow-x: hidden;
+  height: 100%;
   display: flex;
   justify-content: center;
-  height: 100%;
   background-color: #f7f7f7;
+  flex-direction: column;
+  align-items: center;
+
+  .header {
+    font-size: 3rem;
+  }
 
   .project-list {
     margin-top: 3%;
@@ -23,11 +28,6 @@ const Container = styled.div`
     @media (max-width: 768px) {
       width: 100vw;
     }
-  }
-
-  .projects-header {
-    font-size: 3rem;
-    margin-left: 2%;
   }
 
   .project-screenshot {
@@ -69,15 +69,30 @@ const Container = styled.div`
   .tool {
     font-weight: 300;
     margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   .project-link {
     text-decoration: none;
-    color: #0058ff;
-    margin-right: 20px;
+    font-weight: 700;
+    padding: 10px 13px;
+    border-radius: 20px;
+    border: 2px solid #0088ff;
+    margin: 20px 20px 0 0;
+    color: #0088ff;
+    transition: all ease-in-out 50ms;
 
     :visited {
-      color: #0058ff;
+      color: #0088ff;
+    }
+    :hover {
+      background-color: #0088ff;
+      color: white;
+    }
+
+    a {
+      padding: 0;
+      margin: 0;
     }
   }
 `;
@@ -85,8 +100,8 @@ const Container = styled.div`
 const Projects = () => {
   return (
     <Container id="projects">
+      <h1 className="header">Projects</h1>
       <div className="project-list">
-        <h1 className="projects-header">Projects</h1>
         {projectdata.map(project => (
           <div className="project">
             <img
@@ -107,7 +122,7 @@ const Projects = () => {
                 className="project-link"
                 href={project.site}
               >
-                Site
+                Demo
               </a>
               <a
                 rel="noreferrer"
