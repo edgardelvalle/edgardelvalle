@@ -11,7 +11,9 @@ const Container = styled.div`
   align-items: center;
 
   .header {
+    align-self: flex-start;
     font-size: 3rem;
+    margin-left: 5%;
   }
 
   .hero {

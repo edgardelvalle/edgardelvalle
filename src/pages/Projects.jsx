@@ -7,12 +7,14 @@ const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f7f7f7;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  background-color: #f7f7f7;
 
   .header {
+    align-self: flex-start;
     font-size: 3rem;
+    margin-left: 5%;
   }
 
   .project-list {
