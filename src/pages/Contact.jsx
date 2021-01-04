@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import resume from '../files/Edgar Del Valle_Resume.pdf';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
   width: 100%;
@@ -20,12 +21,15 @@ const Container = styled.div`
     flex-direction: column;
   }
 
-  .first-name {
-    font-size: 10rem;
+  .name {
     color: #2f2f2f;
     text-transform: uppercase;
     margin: 0;
     text-align: center;
+  }
+
+  .first-name {
+    font-size: 10rem;
 
     @media (max-width: 768px) {
       font-size: 6rem;
@@ -76,13 +80,12 @@ const Container = styled.div`
 
     background-color: #0088ff;
     padding: 10px 13px;
-    transition: all ease-in-out 100ms;
 
     :hover {
       background-color: #50adff;
-      transform: translateY(-5px);
-      box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-        0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
+      /* transform: translateY(-5px); */
+      box-shadow: 0 0 2.2px rgba(0, 0, 0, 0.034), 0 0 5.3px rgba(0, 0, 0, 0.048),
+        0 0 10px rgba(0, 0, 0, 0.06);
     }
   }
 `;
@@ -91,33 +94,54 @@ const Contact = () => {
   return (
     <Container id="contact">
       <div className="hero">
-        <h1 className="first-name">
-          Edgar <span className="last-name">Del Valle</span>
-        </h1>
-
+        <motion.h1
+          transition={{ duration: 0.25 }}
+          animate={{ scale: [0, 1] }}
+          className="name first-name"
+        >
+          Edgar
+        </motion.h1>
+        <motion.h1
+          transition={{ duration: 0.25 }}
+          animate={{ scale: [0, 0, 1] }}
+          className="name last-name"
+        >
+          Del Valle
+        </motion.h1>
         <span className="description">Web Developer</span>
         <div className="contact">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.15 }}
             rel="noreferrer"
             target="_blank"
             href="https://github.com/edgardelvalle"
           >
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faGithub} />
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.15 }}
             rel="noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/edgardelvalleb/"
           >
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faLinkedin} />
-          </a>
-          <a rel="noreferrer" href="mailto:edqardv@gmail.com">
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.15 }}
+            rel="noreferrer"
+            href="mailto:edqardv@gmail.com"
+          >
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faEnvelope} />
-          </a>
+          </motion.a>
         </div>
-        <a className="resume" href={resume} download>
+        <motion.a
+          whileHover={{ scale: 1.1 }}
+          className="resume"
+          href={resume}
+          download
+        >
           Resume <FontAwesomeIcon color="white" size="1x" icon={faFilePdf} />
-        </a>
+        </motion.a>
       </div>
     </Container>
   );
