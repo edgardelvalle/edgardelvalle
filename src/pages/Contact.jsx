@@ -5,6 +5,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import resume from '../files/Edgar Del Valle_Resume.pdf';
 import { motion } from 'framer-motion';
+import Logo from '../files/Logo.svg';
 
 const Container = styled.div`
   width: 100%;
@@ -15,6 +16,14 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   user-select: none;
+
+  .logo {
+    z-index: -1;
+    opacity: 0.05;
+    position: fixed;
+    transform: translateX(30%);
+    min-height: 80vh;
+  }
 
   .hero {
     display: flex;
@@ -80,19 +89,13 @@ const Container = styled.div`
 
     background-color: #0088ff;
     padding: 10px 13px;
-
-    :hover {
-      background-color: #50adff;
-      /* transform: translateY(-5px); */
-      box-shadow: 0 0 2.2px rgba(0, 0, 0, 0.034), 0 0 5.3px rgba(0, 0, 0, 0.048),
-        0 0 10px rgba(0, 0, 0, 0.06);
-    }
   }
 `;
 
 const Contact = () => {
   return (
     <Container id="contact">
+      <img src={Logo} alt="My logo" className="logo" />
       <div className="hero">
         <motion.h1
           transition={{ duration: 0.25 }}

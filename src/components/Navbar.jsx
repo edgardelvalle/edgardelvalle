@@ -1,17 +1,54 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
+import Logo from '../files/Logo.svg';
 
 const Container = styled.aside`
   position: fixed;
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.95);
-  height: 50px;
+  height: 70px;
 
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  width: 100vw;
+  width: 100%;
+
+  .logo-container {
+    margin-left: 20px;
+
+    .name {
+      color: #353535;
+      font-weight: 700;
+      padding: 0;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 2rem;
+      letter-spacing: -1px;
+
+      .last-name {
+        font-weight: 300;
+      }
+
+      @media screen and (max-width: 700px) {
+        display: none;
+      }
+    }
+
+    .logo {
+      margin-right: 15px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+  }
 
   .link-list {
     margin: 0;
@@ -21,11 +58,19 @@ const Container = styled.aside`
   }
 
   .link-item {
-    text-transform: capitalize;
+    color: #484848;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: ease 0.1s;
 
     a {
       color: inherit;
       text-decoration: none;
+    }
+
+    a:hover {
+      color: #767676;
     }
 
     a:visited {
@@ -41,6 +86,14 @@ const Container = styled.aside`
 const Navbar = () => {
   return (
     <Container>
+      <div className="logo-container">
+        <a href="#">
+          <img className="logo" src={Logo} alt="" />
+          <p className="name">
+            Edgar<span className="last-name">DelValle</span>
+          </p>
+        </a>
+      </div>
       <ul className="link-list">
         <li className="link-item">
           <Link to="#contact">Contact</Link>
