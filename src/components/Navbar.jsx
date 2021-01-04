@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from '../files/Logo.svg';
 
 const Container = styled.aside`
-  position: sticky;
+  position: fixed;
   top: 0;
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.95);
