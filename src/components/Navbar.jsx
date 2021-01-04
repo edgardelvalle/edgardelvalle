@@ -4,10 +4,12 @@ import styled from 'styled-components';
 import Logo from '../files/Logo.svg';
 
 const Container = styled.aside`
-  position: fixed;
+  position: sticky;
+  top: 0;
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.95);
-  height: 70px;
+  height: 7vh;
+  min-height: 50px;
 
   display: flex;
   justify-content: space-between;
@@ -23,7 +25,7 @@ const Container = styled.aside`
       padding: 0;
       margin: 0;
       text-transform: uppercase;
-      font-size: 2rem;
+      font-size: 1.5rem;
       letter-spacing: -1px;
 
       .last-name {
@@ -36,8 +38,8 @@ const Container = styled.aside`
     }
 
     .logo {
-      margin-right: 15px;
-      height: 40px;
+      margin-right: 10px;
+      height: 30px;
       display: flex;
       align-items: center;
       justify-content: center;

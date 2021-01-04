@@ -14,6 +14,7 @@ const Container = styled.div`
   .header {
     align-self: flex-start;
     font-size: 3rem;
+    margin-top: 7%;
     margin-left: 5%;
   }
 

@@ -14,6 +14,7 @@ const Container = styled.div`
     align-self: flex-start;
     font-size: 3rem;
     margin-left: 5%;
+    margin-top: 7%;
   }
 
   .hero {
@@ -23,13 +24,19 @@ const Container = styled.div`
     margin-top: 3%;
   }
 
-  .memoji {
-    height: 200px;
-  }
-
   .info {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .memoji {
+    height: 200px;
+    /* flex-grow: 1; */
+  }
+
+  .summary {
+    flex-grow: 2;
   }
 
   .greeting {

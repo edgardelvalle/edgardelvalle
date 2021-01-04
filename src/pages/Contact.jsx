@@ -40,7 +40,7 @@ const Container = styled.div`
   .first-name {
     font-size: 10rem;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       font-size: 6rem;
     }
   }
@@ -50,7 +50,7 @@ const Container = styled.div`
     font-weight: 300;
     display: block;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       font-size: 4.3rem;
     }
   }
