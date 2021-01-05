@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 
   .project {
-    width: 80vw;
+    width: 90vw;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10%;
@@ -34,11 +34,10 @@ const Container = styled.div`
   }
 
   .project-screenshot {
-    width: 60%;
-    height: 100%;
-    flex-grow: 4;
+    width: 70%;
     border-radius: 20px;
     margin: 1rem;
+    flex-grow: 2;
 
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
       0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
@@ -47,6 +46,7 @@ const Container = styled.div`
 
     @media (max-width: 768px) {
       width: 100vw;
+      height: auto;
       margin: 0;
       border-radius: 0;
       box-shadow: none;
@@ -55,9 +55,7 @@ const Container = styled.div`
   }
 
   .project-details {
-    @media (max-width: 768px) {
-      padding: 5%;
-    }
+    padding: 5% 0 0 5%;
   }
 
   .project-tools {
@@ -73,6 +71,12 @@ const Container = styled.div`
     font-weight: 300;
     margin-right: 10px;
     margin-bottom: 10px;
+  }
+
+  .project-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .project-link {
@@ -109,7 +113,7 @@ const Projects = () => {
           <div className="project">
             <img
               className="project-screenshot"
-              src={MovieLibrary}
+              src={project.screenshot}
               alt="Movie Library Screenshot"
             />
             <div className="project-details">
@@ -119,22 +123,24 @@ const Projects = () => {
                   <li className="tool">{tool}</li>
                 ))}
               </ul>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                className="project-link"
-                href={project.site}
-              >
-                Demo
-              </a>
-              <a
-                rel="noreferrer"
-                target="_blank"
-                className="project-link"
-                href={project.sourcecode}
-              >
-                Source Code
-              </a>
+              <div className="project-links">
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  className="project-link"
+                  href={project.site}
+                >
+                  Demo
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  className="project-link"
+                  href={project.sourcecode}
+                >
+                  Source Code
+                </a>
+              </div>
             </div>
           </div>
         ))}
