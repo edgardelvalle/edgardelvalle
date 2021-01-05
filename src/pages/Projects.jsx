@@ -46,7 +46,7 @@ const Container = styled.div`
 
     @media (max-width: 768px) {
       width: 100vw;
-      height: auto;
+      height: 100%;
       margin: 0;
       border-radius: 0;
       box-shadow: none;
