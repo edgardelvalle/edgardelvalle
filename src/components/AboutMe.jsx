@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Memoji from '../files/Memoji.png';
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -32,7 +32,6 @@ const Container = styled.div`
 
   .memoji {
     height: 200px;
-    /* flex-grow: 1; */
   }
 
   .summary {
@@ -66,7 +65,7 @@ const Container = styled.div`
 const AboutMe = () => {
   return (
     <Container id="about-me">
-      <h1 className="header">About me...</h1>
+      <h2 className="header">About me...</h2>
       <div className="hero">
         <div className="info">
           <img className="memoji" src={Memoji} alt="Edgar's memoji" />

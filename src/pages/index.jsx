@@ -1,23 +1,28 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import '../components/GlobalStyles.css';
 import Navbar from '../components/Navbar';
-import Projects from './Projects';
-import './GlobalStyles.css';
-import AboutMe from './AboutMe';
-import Contact from './Contact';
+import Contact from '../components/Contact';
+import Projects from '../components/Projects';
+import AboutMe from '../components/AboutMe';
+import SEO from '../components/SEO';
 
 const IndexPage = () => {
   return (
     <>
-      <Helmet>
-        <title>Edgar Del Valle</title>
-      </Helmet>
       <Navbar />
-      <Contact />
-      <Projects />
-      <AboutMe />
+      <main>
+        <Contact />
+        <Projects />
+        <AboutMe />
+      </main>
     </>
   );
 };
 
 export default IndexPage;
+
+export const Head = () => <SEO />;

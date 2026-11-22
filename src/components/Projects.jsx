@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import MovieLibrary from '../images/MovieLibrary.png';
 import projectdata from '../data/projectdata';
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100%;
   display: flex;
   justify-content: center;
@@ -58,6 +57,10 @@ const Container = styled.div`
     padding: 5% 0 0 5%;
   }
 
+  .project-title {
+    font-size: 2rem;
+  }
+
   .project-tools {
     color: #6a6a6a;
     display: flex;
@@ -89,17 +92,12 @@ const Container = styled.div`
     color: #0088ff;
     transition: all ease-in-out 50ms;
 
-    :visited {
+    &:visited {
       color: #0088ff;
     }
-    :hover {
+    &:hover {
       background-color: #0088ff;
       color: white;
-    }
-
-    a {
-      padding: 0;
-      margin: 0;
     }
   }
 `;
@@ -107,20 +105,22 @@ const Container = styled.div`
 const Projects = () => {
   return (
     <Container id="projects">
-      <h1 className="header">Projects</h1>
+      <h2 className="header">Projects</h2>
       <div className="project-list">
         {projectdata.map(project => (
-          <div className="project">
+          <article className="project" key={project.title}>
             <img
               className="project-screenshot"
               src={project.screenshot}
-              alt="Movie Library Screenshot"
+              alt={`${project.title} screenshot`}
             />
             <div className="project-details">
-              <h1 className="project-title">{project.title}</h1>
+              <h3 className="project-title">{project.title}</h3>
               <ul className="project-tools">
                 {project.tools.map(tool => (
-                  <li className="tool">{tool}</li>
+                  <li className="tool" key={tool}>
+                    {tool}
+                  </li>
                 ))}
               </ul>
               <div className="project-links">
@@ -142,7 +142,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </Container>
