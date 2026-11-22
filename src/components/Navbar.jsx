@@ -1,11 +1,11 @@
-import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Logo from '../files/Logo.svg';
 
-const Container = styled.aside`
+const Container = styled.header`
   position: fixed;
   top: 0;
+  z-index: 10;
   font-weight: 400;
   background-color: rgba(255, 255, 255, 0.95);
   height: 7vh;
@@ -61,8 +61,10 @@ const Container = styled.aside`
 
   .link-item {
     color: #484848;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.9rem;
+    margin-right: 20px;
+    white-space: nowrap;
     text-transform: uppercase;
     transition: ease 0.1s;
 
@@ -78,10 +80,6 @@ const Container = styled.aside`
     a:visited {
       color: inherit;
     }
-
-    a:first-child {
-      margin-right: 20px;
-    }
   }
 `;
 
@@ -89,24 +87,26 @@ const Navbar = () => {
   return (
     <Container>
       <div className="logo-container">
-        <a href="#">
+        <a href="#top" aria-label="Edgar Del Valle, back to top">
           <img className="logo" src={Logo} alt="" />
           <p className="name">
             Edgar<span className="last-name">DelValle</span>
           </p>
         </a>
       </div>
-      <ul className="link-list">
-        <li className="link-item">
-          <Link to="#contact">Contact</Link>
-        </li>
-        <li className="link-item">
-          <Link to="#projects">Projects</Link>
-        </li>
-        <li className="link-item">
-          <Link to="#about-me">About Me</Link>
-        </li>
-      </ul>
+      <nav>
+        <ul className="link-list">
+          <li className="link-item">
+            <a href="#contact">Contact</a>
+          </li>
+          <li className="link-item">
+            <a href="#projects">Projects</a>
+          </li>
+          <li className="link-item">
+            <a href="#about-me">About Me</a>
+          </li>
+        </ul>
+      </nav>
     </Container>
   );
 };

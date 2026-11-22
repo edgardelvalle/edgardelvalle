@@ -1,7 +1,7 @@
-import MovieLibrary from '../images/MovieLibrary.png';
-import PersonalWebsite from '../images/PersonalWebsite.png';
+import MovieLibrary from '../images/MovieLibrary.webp';
+import PersonalWebsite from '../images/PersonalWebsite.webp';
 
-export default [
+const projects = [
   {
     title: 'Personal Website',
     tools: ['React', 'styled-components', 'GatsbyJS'],
@@ -17,3 +17,5 @@ export default [
     screenshot: MovieLibrary,
   },
 ];
+
+export default projects;

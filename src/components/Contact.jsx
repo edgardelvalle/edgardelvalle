@@ -7,7 +7,7 @@ import resume from '../files/Edgar Del Valle_Resume.pdf';
 import { motion } from 'framer-motion';
 import Logo from '../files/Logo.svg';
 
-const Container = styled.div`
+const Container = styled.section`
   width: 100%;
   height: 100vh;
 
@@ -15,7 +15,6 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  user-select: none;
 
   .logo {
     z-index: -1;
@@ -37,6 +36,11 @@ const Container = styled.div`
     text-align: center;
   }
 
+  .first-name,
+  .last-name {
+    display: block;
+  }
+
   .first-name {
     font-size: 10rem;
 
@@ -48,7 +52,6 @@ const Container = styled.div`
   .last-name {
     font-size: 7rem;
     font-weight: 300;
-    display: block;
 
     @media (max-width: 1000px) {
       font-size: 4.3rem;
@@ -58,7 +61,7 @@ const Container = styled.div`
   .description {
     text-transform: uppercase;
     font-size: 1rem;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 0.5vw;
     text-align: center;
   }
@@ -74,7 +77,7 @@ const Container = styled.div`
       color: inherit;
       margin: 20px;
 
-      :visiter {
+      &:visited {
         color: inherit;
       }
     }
@@ -95,22 +98,24 @@ const Container = styled.div`
 const Contact = () => {
   return (
     <Container id="contact">
-      <img src={Logo} alt="My logo" className="logo" />
+      <img src={Logo} alt="" className="logo" />
       <div className="hero">
-        <motion.h1
-          transition={{ duration: 0.25 }}
-          animate={{ scale: [0, 1] }}
-          className="name first-name"
-        >
-          Edgar
-        </motion.h1>
-        <motion.h1
-          transition={{ duration: 0.25 }}
-          animate={{ scale: [0, 0, 1] }}
-          className="name last-name"
-        >
-          Del Valle
-        </motion.h1>
+        <h1 className="name">
+          <motion.span
+            transition={{ duration: 0.25 }}
+            animate={{ scale: [0, 1] }}
+            className="first-name"
+          >
+            Edgar
+          </motion.span>{' '}
+          <motion.span
+            transition={{ duration: 0.25 }}
+            animate={{ scale: [0, 0, 1] }}
+            className="last-name"
+          >
+            Del Valle
+          </motion.span>
+        </h1>
         <span className="description">Web Developer</span>
         <div className="contact">
           <motion.a
@@ -118,6 +123,7 @@ const Contact = () => {
             rel="noreferrer"
             target="_blank"
             href="https://github.com/edgardelvalle"
+            aria-label="GitHub"
           >
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faGithub} />
           </motion.a>
@@ -126,12 +132,13 @@ const Contact = () => {
             rel="noreferrer"
             target="_blank"
             href="https://www.linkedin.com/in/edgardelvalleb/"
+            aria-label="LinkedIn"
           >
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faLinkedin} />
           </motion.a>
           <motion.a
             whileHover={{ scale: 1.15 }}
-            rel="noreferrer"
+            aria-label="Email"
             href="mailto:edqardv@gmail.com"
           >
             <FontAwesomeIcon color="#2f2f2f" size="3x" icon={faEnvelope} />
